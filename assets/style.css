@@ -63,3 +63,21 @@
     background-image: img("");
     background-size: cover;
   }
+
+  #char{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    position: relative;
+    top: 270px;
+    left: 10px;
+  }
+
+  #object{
+    background-color: rgb(255, 62, 62);
+    height: 50px;
+    width: 30px;
+    position: relative;
+    top: 220px;
+    left: 560px;
+  }
