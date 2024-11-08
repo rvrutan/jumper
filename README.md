@@ -37,8 +37,9 @@ To play Jumper locally on your computer:
 3. Install any necessary dependencies (if applicable):
 
 
-4. Run the game: -->
+4. Run the game:
 
+5. test  --> 
 
 ## How to Play
 
