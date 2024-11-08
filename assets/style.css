@@ -74,7 +74,7 @@
   }
 
   #object{
-    background-color: red;
+    background-color: rgb(255, 62, 62);
     height: 50px;
     width: 30px;
     position: relative;
