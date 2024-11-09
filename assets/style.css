@@ -71,7 +71,10 @@
     position: relative;
     top: 266px;
     left: 10px;
-    animation: charJump 500ms linear infinite;
+  }
+
+  .animateJump{
+    animation: charJump 500ms linear;
   }
 
   #object{
@@ -96,10 +99,9 @@
   @keyframes charJump{
     0%, 100%{
       top: 266px;
-      transform: rotate(0deg);
     }
     50%{
-      top: 180px;
+      top: 140px;
       transform: rotate(360deg);
     }
   }
