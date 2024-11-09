@@ -1,5 +1,6 @@
 var char = document.getElementById("char");
 var object = document.getElementById("object");
+const score = document.getElementById("score");
 
 function jump() {
     char.classList.add("animateJump");
@@ -9,6 +10,7 @@ function jump() {
 }
 
 document.addEventListener('keydown', (event) => {
+    score.innerText++;
     if(event.code === 'Space'){
         jump();
     }
