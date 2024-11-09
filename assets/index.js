@@ -16,7 +16,7 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-playerCreation
+// playerCreation
 var checkCollision = setInterval(function(){
     var charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
     var objectLeft = parseInt(window.getComputedStyle(object).getPropertyValue("left"));
