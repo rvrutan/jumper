@@ -69,8 +69,12 @@
     width: 30px;
     background-color: blue;
     position: relative;
-    top: 270px;
+    top: 266px;
     left: 10px;
+  }
+
+  .animateJump{
+    animation: charJump 500ms linear;
   }
 
   #object{
@@ -78,6 +82,26 @@
     height: 50px;
     width: 30px;
     position: relative;
-    top: 220px;
-    left: 560px;
+    top: 216px;
+    right: -560px;
+    animation: objectSlide 0.75s linear infinite;
+  }
+
+  @keyframes objectSlide {
+    0% {
+      left: 560px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  @keyframes charJump{
+    0%, 100%{
+      top: 266px;
+    }
+    50%{
+      top: 140px;
+      transform: rotate(360deg);
+    }
   }
