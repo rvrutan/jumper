@@ -32,7 +32,6 @@
     margin: 0;
     font-size: 4vw;
     line-height: 1;
-    
   }
   
   nav {
@@ -42,17 +41,28 @@
   }
   
   nav a {
+    border-radius: 75px;
     text-decoration: none;
     padding: 5px 10px;
-    color: var(--secondary);
     margin-right: 10px;
     font-size: 1.4rem;
-    background-image: linear-gradient(.25turn, #2993c1, #cfe2c0, #f69d3c);
+    background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+  }
+  .navbar-toggler { 
+    border-radius: 75px;
+    border-color: var(--primary);
   }
   
   nav a:hover {
     background-size: 100% 100%;
     color: var(--primary);
+  }
+  #modeSwitchContainer {
+color: var(--secondary);
+  }
+
+  #score {
+    color: antiquewhite;
   }
 
   #game {
