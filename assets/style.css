@@ -89,10 +89,10 @@
 
   @keyframes objectSlide {
     0% {
-      right: -560px;
+      left: 560px;
     }
     100% {
-      right: 0;
+      left: 0;
     }
   }
 
