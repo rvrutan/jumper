@@ -69,7 +69,7 @@
     width: 30px;
     background-color: blue;
     position: relative;
-    top: 270px;
+    top: 266px;
     left: 10px;
   }
 
@@ -78,6 +78,16 @@
     height: 50px;
     width: 30px;
     position: relative;
-    top: 220px;
-    left: 560px;
+    top: 216px;
+    right: -560px;
+    animation: objectSlide 0.75s linear infinite;
+  }
+
+  @keyframes objectSlide {
+    0% {
+      right: -560px;
+    }
+    100% {
+      right: 0;
+    }
   }
