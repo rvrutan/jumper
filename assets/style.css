@@ -1,117 +1,158 @@
 :root {
-    --primary: rgb(52, 0, 105);
-    --secondary: rgb(161, 121, 78);
-    --third:rgb(168, 202, 17);
+  --primary: rgb(52, 0, 105);
+  --secondary: rgb(161, 121, 78);
+  --third: rgb(168, 202, 17);
+}
 
-  }
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--primary);
+  background-color: var(--light);
+  line-height: 1.5;
+}
 
-  body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--primary);
-    background-color: var(--light);
-    line-height: 1.5;
-  }
+header {
+  padding: 15px 6% 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--primary);
+}
 
-  header {
-    padding: 15px 6% 15px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--primary);
-  }
-  
-  header h1 {
-    color: var(--primary);
-    background-color: var(--secondary);
-    padding: 5px 1% 5px 6%;
-    margin: 0;
-    font-size: 4vw;
-    line-height: 1;
-  }
-  
-  nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  nav a {
-    border-radius: 75px;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-right: 10px;
-    font-size: 1.4rem;
-    background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
-  }
-  .navbar-toggler { 
-    border-radius: 75px;
-    border-color: var(--primary);
-  }
-  
-  nav a:hover {
-    background-size: 100% 100%;
-    color: var(--primary);
-  }
-  #modeSwitchContainer {
-color: var(--secondary);
-  }
+header h1 {
+  color: var(--primary);
+  background-color: var(--secondary);
+  padding: 5px 1% 5px 6%;
+  margin: 0;
+  font-size: 4vw;
+  line-height: 1;
+}
 
-  #score {
-    color: antiquewhite;
-  }
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  #game {
-    width: 600px;
-    height: 300px;
-    border: 2px solid black;
-    margin: auto;
-    background-image: img("");
-    background-size: cover;
-  }
+nav a {
+  border-radius: 75px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 1.4rem;
+  background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"),
+    linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+}
+.navbar-toggler {
+  border-radius: 75px;
+  border-color: var(--primary);
+}
 
-  #char{
-    height: 30px;
-    width: 30px;
-    background-color: blue;
-    position: relative;
+nav a:hover {
+  background-size: 100% 100%;
+  color: var(--primary);
+}
+#modeSwitchContainer {
+  color: var(--secondary);
+}
+
+html[data-bs-theme="light"] nav {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+html[data-bs-theme="light"] .navbar-brand {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+html[data-bs-theme="light"] #score {
+  color: var(--primary);
+}
+html[data-bs-theme="light , dark"] .btn {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+html[data-bs-theme="dark"] .btn {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+html[data-bs-theme="light"] .btn:hover {
+  background-color: var(--secondary);
+}
+
+html[data-bs-theme="dark"] .btn:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+html[data-bs-theme="dark"] #game {
+  border: 2px solid var(--secondary);
+}
+
+
+#score {
+  color: antiquewhite;
+}
+
+#game {
+  width: 600px;
+  height: 300px;
+  border: 2px solid black;
+  margin: auto;
+  background-image: img("");
+  background-size: cover;
+}
+
+#char {
+  height: 30px;
+  width: 30px;
+  background-color: blue;
+  position: relative;
+  top: 266px;
+  left: 10px;
+  background-image: url("");
+  background-size: cover;
+}
+
+.animateJump {
+  animation: charJump 500ms linear;
+}
+
+#object {
+  background-color: rgb(255, 62, 62);
+  height: 50px;
+  width: 30px;
+  position: relative;
+  top: 216px;
+  right: -560px;
+  animation: objectSlide 0.75s linear infinite;
+}
+
+@keyframes objectSlide {
+  0% {
+    left: 560px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes charJump {
+  0%,
+  100% {
     top: 266px;
-    left: 10px;
   }
-
-  .animateJump{
-    animation: charJump 500ms linear;
+  50% {
+    top: 140px;
+    transform: rotate(360deg);
   }
-
-  #object{
-    background-color: rgb(255, 62, 62);
-    height: 50px;
-    width: 30px;
-    position: relative;
-    top: 216px;
-    right: -560px;
-    animation: objectSlide 0.75s linear infinite;
-  }
-
-  @keyframes objectSlide {
-    0% {
-      left: 560px;
-    }
-    100% {
-      left: 0;
-    }
-  }
-
-  @keyframes charJump{
-    0%, 100%{
-      top: 266px;
-    }
-    50%{
-      top: 140px;
-      transform: rotate(360deg);
-    }
-  }
+}
