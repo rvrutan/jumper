@@ -96,8 +96,10 @@
   @keyframes charJump{
     0%, 100%{
       top: 266px;
+      transform: rotate(0deg);
     }
     50%{
       top: 180px;
+      transform: rotate(360deg);
     }
   }
