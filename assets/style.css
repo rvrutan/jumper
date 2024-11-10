@@ -85,6 +85,12 @@ html[data-bs-theme="dark"] .btn {
   color: var(--secondary);
 }
 
+html[data-bs-theme="light"] .btn {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
 html[data-bs-theme="light"] .btn:hover {
   background-color: var(--secondary);
 }
