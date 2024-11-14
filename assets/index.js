@@ -14,6 +14,7 @@ document.addEventListener('keydown', (event) => {
     if(event.code === 'Space'){
         jump();
     }
+
 });
 
 // playerCreation
@@ -44,6 +45,7 @@ const toggleMode = () => {
         if (lightMode.checked) {
             htmlNode.setAttribute('data-bs-theme', 'light');
         }
+        //store the data in local storage
     });
 };
 
@@ -60,7 +62,3 @@ toggleMode();
 //     // Toggle the 'hidden' class on the scoreboard
 //     scoreboard.classList.toggle('hidden');
 // });
-
-
-
-
