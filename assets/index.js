@@ -63,15 +63,3 @@ const toggleMode = () => {
 };
 
 toggleMode();
-
-//score board
-
-// Select the button and scoreboard elements
-// const button = document.getElementById('showScoreboardButton');
-// const scoreboard = document.getElementById('scoreboard');
-
-// // Add event listener to the button
-// button.addEventListener('click', () => {
-//     // Toggle the 'hidden' class on the scoreboard
-//     scoreboard.classList.toggle('hidden');
-// });

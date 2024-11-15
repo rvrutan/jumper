@@ -25,7 +25,7 @@
               <a class="nav-link active" aria-current="page" href="#">PLAY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="scoreboard" href="#">HIGH SCORES</a>
+              <button class="nav-link" id="scoreboard" href="#">HIGH SCORES</button>
             </li>
           </ul>
         </div>
@@ -37,9 +37,6 @@
       <input type="radio" class="btn-check" name="btnradio" id="lightMode" autocomplete="off">
       <label class="btn btn-toggle-mode" for="lightMode">☼</label>
     </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".modal">
-      Launch modal
-    </button>
   </header>
   <div class="modal" id="gameoverModal" tabindex="-1">
     <div class="modal-dialog">
@@ -48,8 +45,8 @@
           <h5 class="modal-title" id="title-modal">Your Score</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
+        <div class="modal-body" id="modal-body">
+          <p>Player Name</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
