@@ -141,6 +141,7 @@ html[data-bs-theme="dark"] #game {
   top: 216px;
   right: -560px;
   animation: objectSlide 0.75s linear infinite;
+  animation-delay: 1s;
 }
 
 @keyframes objectSlide {
