@@ -50,9 +50,8 @@ function gameOverModal(){
 function gameRestart(){
     score.innerText = 0;
     object.classList.remove("animateSlide");
-    object.classList.add("animateSlide");
     void object.offsetWidth;
-    gameoverModal.style.display = "none";
+    object.classList.add("animateSlide");
 }
 
 // mode switch
