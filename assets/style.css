@@ -139,6 +139,10 @@ html[data-bs-theme="dark"] #game {
   animation: charJump 500ms linear;
 }
 
+.animateSlide{
+  animation: objectSlide 0.75s linear infinite;
+}
+
 #object {
   background-color: rgb(255, 62, 62);
   height: 50px;
@@ -146,7 +150,6 @@ html[data-bs-theme="dark"] #game {
   position: relative;
   top: 216px;
   right: -560px;
-  animation: objectSlide 0.75s linear infinite;
   animation-delay: 1s;
 }
 
