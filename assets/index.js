@@ -2,6 +2,9 @@ var char = document.getElementById("char");
 var object = document.getElementById("object");
 var score = document.getElementById("score");
 var sound = document.getElementById("sound");
+var playAgain = document.getElementById("playagain");
+var gameover = document.getElementById("gameoverModal");
+var modalTitle = document.getElementById("title-modal");
 
 function jump() {
     char.classList.add("animateJump");
@@ -10,13 +13,16 @@ function jump() {
     });
 }
 
+window.onload = function slide() {
+    object.classList.add("animateSlide");
+}
+
 document.addEventListener('keydown', (event) => {
     score.innerText++;
     if(event.code === 'Space'){
         jump();
         sound.play();
     }
-
 });
 
 // Collision check
@@ -31,16 +37,23 @@ var checkCollision = setInterval(function(){
 
 //gameover modal activated, score displayed
 function gameOverModal(){
-    var gameover = document.getElementById("gameoverModal");
-    var modalTitle = document.getElementById("title-modal");
+    playAgain.addEventListener("click", () => {
+        gameRestart();
+    });
     
     modalTitle.textContent = score.innerText;
-    
     var gameModal = new bootstrap.Modal(gameover);
-
     gameModal.show();
 }
 
+//playAgain function
+function gameRestart(){
+    score.innerText = 0;
+    object.classList.remove("animateSlide");
+    object.classList.add("animateSlide");
+    void object.offsetWidth;
+    gameoverModal.style.display = "none";
+}
 
 // mode switch
 
