@@ -103,7 +103,13 @@ html[data-bs-theme="dark"] .btn:hover {
 html[data-bs-theme="dark"] #game {
   border: 2px solid var(--secondary);
 }
-
+#title-modal {
+  color: var(--secondary);
+  text-align: center;
+}
+#modal-body{
+  color: var(--secondary);
+}
 
 #score {
   color: antiquewhite;
