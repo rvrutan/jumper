@@ -1,6 +1,6 @@
 var char = document.getElementById("char");
 var object = document.getElementById("object");
-const score = document.getElementById("score");
+var score = document.getElementById("score");
 
 function jump() {
     char.classList.add("animateJump");
@@ -17,15 +17,28 @@ document.addEventListener('keydown', (event) => {
 
 });
 
-// playerCreation
+// Collision check
 var checkCollision = setInterval(function(){
     var charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
     var objectLeft = parseInt(window.getComputedStyle(object).getPropertyValue("left"));
     if(objectLeft < 30 && objectLeft > 0 && charTop > 216){
         object.style.animation = "none";
-        console.log("You Lose");
+        gameOverModal();
     }
 }, 10)
+
+//gameover modal activated, score displayed
+function gameOverModal(){
+    var gameover = document.getElementById("gameoverModal");
+    var modalTitle = document.getElementById("title-modal");
+    
+    modalTitle.textContent = score.innerText;
+    
+    var gameModal = new bootstrap.Modal(gameover);
+
+    gameModal.show();
+}
+
 
 // mode switch
 
