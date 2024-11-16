@@ -5,6 +5,13 @@ var sound = document.getElementById("sound");
 var playAgain = document.getElementById("playagain");
 var gameover = document.getElementById("gameoverModal");
 var modalTitle = document.getElementById("title-modal");
+var playButton = document.getElementById("play");
+
+function navPlay(){
+    playButton.addEventListener("click", () => {
+        location.reload();
+    });
+}
 
 function jump() {
     char.classList.add("animateJump");
@@ -13,8 +20,9 @@ function jump() {
     });
 }
 
-window.onload = function slide() {
+window.onload = function start() {
     object.classList.add("animateSlide");
+    navPlay();
 }
 
 document.addEventListener('keydown', (event) => {
@@ -46,9 +54,7 @@ function gameOverModal(){
     gameModal.show();
 }
 
-
 // mode switch
-
 const toggleMode = () => {
     const htmlNode = document.querySelector('html');
     const darkMode = document.querySelector('#darkMode');
