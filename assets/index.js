@@ -6,6 +6,7 @@ var playAgain = document.getElementById("playagain");
 var gameover = document.getElementById("gameoverModal");
 var modalTitle = document.getElementById("title-modal");
 var playButton = document.getElementById("play");
+var playerName;
 
 function navPlay(){
     playButton.addEventListener("click", () => {
@@ -30,6 +31,7 @@ document.addEventListener('keydown', (event) => {
         jump();
         sound.play();
         score.innerText++;
+        localStorage.setItem('scores' , score.innerText); 
     }
 });
 
@@ -74,3 +76,13 @@ const toggleMode = () => {
         //store the data in local storage
     });
 };
+
+
+
+// Get player name and store it
+function getPlayerName() {
+    playerName = prompt("Enter your name:");
+    if (!playerName) playerName = "Anonymous"; 
+    localStorage.setItem('currentPlayer', playerName);
+}
+getPlayerName();
