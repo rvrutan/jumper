@@ -18,10 +18,10 @@ window.onload = function slide() {
 }
 
 document.addEventListener('keydown', (event) => {
-    score.innerText++;
     if(event.code === 'Space'){
         jump();
         sound.play();
+        score.innerText++;
     }
 });
 
