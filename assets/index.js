@@ -112,7 +112,7 @@ toggleMode();
 
 // Show scoreboard
 function displayScoreboard() {
-    const scoreboard = document.getElementById("scoreboard");
+    const scoreboard = document.getElementById("game-score");
     const scores = JSON.parse(localStorage.getItem('score')) || [];
 
     
