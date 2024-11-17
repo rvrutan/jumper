@@ -5,7 +5,7 @@ var sound = document.getElementById("sound");
 var playAgain = document.getElementById("playagain");
 var gameover = document.getElementById("gameoverModal");
 var modalTitle = document.getElementById("title-modal");
-var modalBody = document.getElementById("modal-body")
+var modalBody = document.getElementById("modal-body");
 var playButton = document.getElementById("play");
 var playerName;
 
@@ -31,8 +31,7 @@ document.addEventListener('keydown', (event) => {
     if(event.code === 'Space'){
         jump();
         sound.play();
-        score.innerText++;
-        localStorage.setItem('scores' , score.innerText); 
+        score.innerText++;   
     }
 });
 
@@ -41,27 +40,55 @@ var checkCollision = setInterval(function(){
     var charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
     var objectLeft = parseInt(window.getComputedStyle(object).getPropertyValue("left"));
     if(objectLeft < 30 && objectLeft > 0 && charTop > 216){
-        object.style.animation = "none";
-        gameOverModal();
+        object.style.animation = "none";   
+        gameOverModal(); 
     }
-}, 10)
+}, 10);
 
-//gameover modal activated, score displayed
+// Game over modal activated, final score saved and displayed
 function gameOverModal(){
-    playAgain.addEventListener("click", () => {
-        location.reload();
-    });
+    let finalScore = parseInt(score.innerText);
 
+    let storedScores = localStorage.getItem('scores');
+    let scores = storedScores ? JSON.parse(storedScores) : [];
+
+    // Add the current final score to the array of scores
+    scores.push(finalScore);
+
+    // Sort the scores (highest to lowest)
+    scores.sort((a, b) => b - a);
+
+    // Save the updated high scores back to localStorage
+    localStorage.setItem('scores', JSON.stringify(scores));
+
+    // Display the final score and the top high scores
     modalTitle.textContent = `Game Over ${playerName}! Your final score is:`;
 
-    modalBody.innerHTML = score.innerText;
+    modalBody.innerHTML = `Your Score: ${finalScore}<br>High Scores:<br>`;
+    scores.slice(0, 5).forEach((score, index) => {
+        modalBody.innerHTML += `${index + 1}. ${score}<br>`;
+    });
 
+    // Show the game over modal
     var gameModal = new bootstrap.Modal(gameover);
     gameModal.show();
+
+    // Add the event listener for play again
+    playAgain.addEventListener("click", () => {
+        location.reload();  // Restart the game on play again
+    });
 }
+// high scores button
 
-// mode switch
 
+
+
+
+
+
+
+
+// Mode switch for light/dark theme
 const toggleMode = () => {
     const htmlNode = document.querySelector('html');
     const darkMode = document.querySelector('#darkMode');
@@ -97,6 +124,7 @@ const applyStoredTheme = () => {
     }
 };
 
+// Apply theme on window load
 window.onload = function() {
     applyStoredTheme();  
     toggleMode();        
@@ -104,7 +132,7 @@ window.onload = function() {
     navPlay();
 };
 
-// Get player name and store it
+// Get player name and store it in localStorage
 function getPlayerName() {
     playerName = localStorage.getItem('currentPlayer');
     if (!playerName) {
@@ -113,4 +141,3 @@ function getPlayerName() {
         localStorage.setItem('currentPlayer', playerName);  
 }}
 getPlayerName();
- 
