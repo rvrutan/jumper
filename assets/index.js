@@ -7,6 +7,8 @@ var gameover = document.getElementById("gameoverModal");
 var modalTitle = document.getElementById("title-modal");
 var modalBody = document.getElementById("modal-body");
 var playButton = document.getElementById("play");
+var highScores = document.getElementById("highscores");
+var scoresBody = document.getElementById("scores-body");
 var playerName;
 
 function navPlay(){
@@ -75,18 +77,22 @@ function gameOverModal(){
 
     // Add the event listener for play again
     playAgain.addEventListener("click", () => {
-        location.reload();  // Restart the game on play again
+        location.reload();
     });
 }
 // high scores button
+function showHighScores() {
+let storedScores = localStorage.getItem('scores');
+let scores = storedScores ? JSON.parse(storedScores) : [];
 
+scoresBody.innerHTML = `Your<br>High Scores:<br>`;
+scores.slice(0, 5).forEach((score, index) => {
+    scoresBody.innerHTML += `${index + 1}. ${score}<br>`;
+});
+ var scoresTable = new bootstrap.Modal(highScores);
+ scoresTable.show();
 
-
-
-
-
-
-
+}
 
 // Mode switch for light/dark theme
 const toggleMode = () => {
@@ -141,3 +147,6 @@ function getPlayerName() {
         localStorage.setItem('currentPlayer', playerName);  
 }}
 getPlayerName();
+
+
+document.getElementById('scoreboard').addEventListener('click' , showHighScores);

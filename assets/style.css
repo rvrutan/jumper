@@ -56,6 +56,7 @@ nav a {
 nav a:hover {
   background-size: 100% 100%;
   color: var(--primary);
+  cursor: default;
 }
 #modeSwitchContainer {
   color: var(--secondary);
@@ -108,6 +109,10 @@ html[data-bs-theme="dark"] #game {
   text-align: center;
 }
 #modal-body{
+  color: var(--secondary);
+}
+
+#scores-body {
   color: var(--secondary);
 }
 
