@@ -137,7 +137,7 @@ html[data-bs-theme="dark"] #game {
   position: relative;
   top: 245px;
   left: 10px;
-  background-image: url(/assets/Sprites/main_char-removebg-preview.png); /* Replace with your file path */
+  background-image: url(Sprites/main_char-removebg-preview.png); /* Replace with your file path */
   background-size: cover; /* Ensures the image covers the element */
 }
 
