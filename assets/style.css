@@ -125,20 +125,29 @@ html[data-bs-theme="dark"] #game {
   height: 300px;
   border: 2px solid black;
   margin: auto;
-  background-image: url(/assets/Sprites/background\ img.jpg); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling of the image */
+  background-image: url(/assets/Sprites/background\ img.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 #char {
-  height: 50px; /* Adjust height if needed */
+  height: 50px; 
   width: 50px; /* Adjust width if needed */
   position: relative;
   top: 245px;
   left: 10px;
   background-image: url(/assets/Sprites/main_char-removebg-preview.png); /* Replace with your file path */
   background-size: cover; /* Ensures the image covers the element */
+}
+
+#char.collided {
+  top: 248px;
+  left: 10px;
+  background-image: url(./Sprites/dead_player-removebg-preview.png); /* New image after collision */
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: none; /* Stop animations if any */
 }
 
 .animateJump {
@@ -160,6 +169,16 @@ html[data-bs-theme="dark"] #game {
     background-size: cover; /* Ensures the image covers the element */
     animation: objectSlide 0.75s linear infinite; /* Keeps the sliding animation */
     animation-delay: 1s;
+  }
+
+  #object.collided {
+    left: 50px;
+    top: 163px;
+    background-image: url(./Sprites/Broken_building-removebg-preview.png); /* Path to your new image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: none; /* Stop animation */
+    
   }
 
 @keyframes objectSlide {

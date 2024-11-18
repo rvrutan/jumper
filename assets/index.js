@@ -2,6 +2,7 @@ var char = document.getElementById("char");
 var object = document.getElementById("object");
 var score = document.getElementById("score");
 var sound = document.getElementById("sound");
+var collisionSound = document.getElementById("collisionSound");
 var playAgain = document.getElementById("playagain");
 var gameover = document.getElementById("gameoverModal");
 var modalTitle = document.getElementById("title-modal");
@@ -11,7 +12,7 @@ var highScores = document.getElementById("highscores");
 var scoresBody = document.getElementById("scores-body");
 var playerName;
 
-function navPlay(){
+function navPlay() {
     playButton.addEventListener("click", () => {
         location.reload();
     });
@@ -30,25 +31,29 @@ window.onload = function start() {
 }
 
 document.addEventListener('keydown', (event) => {
-    if(event.code === 'Space'){
+    if (event.code === 'Space') {
         jump();
         sound.play();
-        score.innerText++;   
+        score.innerText++;
     }
 });
 
+
 // Collision check
-var checkCollision = setInterval(function(){
+var checkCollision = setInterval(function () {
     var charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
     var objectLeft = parseInt(window.getComputedStyle(object).getPropertyValue("left"));
-    if(objectLeft < 30 && objectLeft > 0 && charTop > 216){
-        object.style.animation = "none";   
-        gameOverModal(); 
+    if (objectLeft < 30 && objectLeft > 0 && charTop > 216) {
+        object.style.animation = "none";
+        object.classList.add('collided'); 
+        char.classList.add('collided');
+        collisionSound.play();
+        gameOverModal();
     }
 }, 10);
 
 // Game over modal activated, final score saved and displayed
-function gameOverModal(){
+function gameOverModal() {
     let finalScore = parseInt(score.innerText);
 
     let storedScores = localStorage.getItem('scores');
@@ -82,15 +87,15 @@ function gameOverModal(){
 }
 // high scores button
 function showHighScores() {
-let storedScores = localStorage.getItem('scores');
-let scores = storedScores ? JSON.parse(storedScores) : [];
+    let storedScores = localStorage.getItem('scores');
+    let scores = storedScores ? JSON.parse(storedScores) : [];
 
-scoresBody.innerHTML = `Your<br>High Scores:<br>`;
-scores.slice(0, 5).forEach((score, index) => {
-    scoresBody.innerHTML += `${index + 1}. ${score}<br>`;
-});
- var scoresTable = new bootstrap.Modal(highScores);
- scoresTable.show();
+    scoresBody.innerHTML = `Your<br>High Scores:<br>`;
+    scores.slice(0, 5).forEach((score, index) => {
+        scoresBody.innerHTML += `${index + 1}. ${score}<br>`;
+    });
+    var scoresTable = new bootstrap.Modal(highScores);
+    scoresTable.show();
 
 }
 
@@ -103,7 +108,7 @@ const toggleMode = () => {
     darkMode.addEventListener('change', () => {
         if (darkMode.checked) {
             htmlNode.setAttribute('data-bs-theme', 'dark');
-            localStorage.setItem('theme', 'dark'); 
+            localStorage.setItem('theme', 'dark');
         }
     });
 
@@ -131,9 +136,9 @@ const applyStoredTheme = () => {
 };
 
 // Apply theme on window load
-window.onload = function() {
-    applyStoredTheme();  
-    toggleMode();        
+window.onload = function () {
+    applyStoredTheme();
+    toggleMode();
     object.classList.add("animateSlide");
     navPlay();
 };
@@ -144,9 +149,10 @@ function getPlayerName() {
     if (!playerName) {
         playerName = prompt("Enter your name:");
         if (!playerName) playerName = "Anonymous";
-        localStorage.setItem('currentPlayer', playerName);  
-}}
+        localStorage.setItem('currentPlayer', playerName);
+    }
+}
 getPlayerName();
 
 
-document.getElementById('scoreboard').addEventListener('click' , showHighScores);
+document.getElementById('scoreboard').addEventListener('click', showHighScores);
