@@ -125,8 +125,10 @@ html[data-bs-theme="dark"] #game {
   height: 300px;
   border: 2px solid black;
   margin: auto;
-  background-image: img("");
-  background-size: cover;
+  background-image: url(/assets/Sprites/background\ img.jpg); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
 }
 
 #char {
@@ -138,20 +140,6 @@ html[data-bs-theme="dark"] #game {
   background-image: url(/assets/Sprites/main_char-removebg-preview.png); /* Replace with your file path */
   background-size: cover; /* Ensures the image covers the element */
 }
-
-
-
-
-/* {
-  height: 30px;
-  width: 30px;
-  background-color: blue;
-  position: relative;
-  top: 266px;
-  left: 10px;
-  background-image: url("");
-  background-size: cover;
-} */
 
 .animateJump {
   animation: charJump 500ms linear;
