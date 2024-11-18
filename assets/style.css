@@ -125,10 +125,10 @@ html[data-bs-theme="dark"] #game {
   height: 300px;
   border: 2px solid black;
   margin: auto;
-  background-image: url(/assets/Sprites/background\ img.jpg); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-image: url(Sprites/tropicalCity.jpg); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
 }
 
 #char {
@@ -137,7 +137,7 @@ html[data-bs-theme="dark"] #game {
   position: relative;
   top: 245px;
   left: 10px;
-  background-image: url(/assets/Sprites/main_char-removebg-preview.png); /* Replace with your file path */
+  background-image: url(Sprites/main_char-removebg-preview.png); /* Replace with your file path */
   background-size: cover; /* Ensures the image covers the element */
 }
 
