@@ -130,6 +130,19 @@ html[data-bs-theme="dark"] #game {
 }
 
 #char {
+  height: 50px; /* Adjust height if needed */
+  width: 50px; /* Adjust width if needed */
+  position: relative;
+  top: 245px;
+  left: 10px;
+  background-image: url(/assets/Sprites/main_char-removebg-preview.png); /* Replace with your file path */
+  background-size: cover; /* Ensures the image covers the element */
+}
+
+
+
+
+/* {
   height: 30px;
   width: 30px;
   background-color: blue;
@@ -138,7 +151,7 @@ html[data-bs-theme="dark"] #game {
   left: 10px;
   background-image: url("");
   background-size: cover;
-}
+} */
 
 .animateJump {
   animation: charJump 500ms linear;
@@ -153,7 +166,7 @@ html[data-bs-theme="dark"] #game {
     height: 100px; /* Adjust height if needed */
     width: 50px; /* Adjust width if needed */
     position: relative;
-    top: 176px;
+    top: 155px;
     right: -540px;
     background-image: url(./Sprites/Building\ img..png); /* Replace with your file path */
     background-size: cover; /* Ensures the image covers the element */
