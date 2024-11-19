@@ -168,7 +168,7 @@ html[data-bs-theme="dark"] #game {
     background-image: url(./Sprites/Building\ img..png); /* Replace with your file path */
     background-size: cover; /* Ensures the image covers the element */
     animation: objectSlide 0.75s linear infinite; /* Keeps the sliding animation */
-    animation-delay: 1s;
+    animation-delay: 3s;
   }
 
   #object.collided {
@@ -180,6 +180,38 @@ html[data-bs-theme="dark"] #game {
     animation: none; /* Stop animation */
     
   }
+
+#footerbrand{
+  color: var(--secondary);
+  border-radius: 75px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 1.4rem;
+  background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"),
+    linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+#footerbrand:hover {
+  background-size: 100% 100%;
+  color: var(--secondary);
+  cursor: default;
+}
+
+footer a {
+  color: var(--secondary);
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container{
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 @keyframes objectSlide {
   0% {
