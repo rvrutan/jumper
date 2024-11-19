@@ -200,7 +200,7 @@ html[data-bs-theme="dark"] #game {
 
 footer a {
   color: var(--secondary);
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -211,6 +211,14 @@ footer a {
   padding-left: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-link{
+  display: flex;
+  margin: 32px;
 }
 
 @keyframes objectSlide {
