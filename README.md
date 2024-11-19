@@ -21,8 +21,11 @@
 - **Smooth Controls**: Responsive controls for an enjoyable gaming experience.
 
 ## Screenshots
-[Building] https://github.com/rvrutan/jumper/blob/main/assets/Sprites/Broken%20building.jpg
-![Game Screenshot]()
+![Darkmode](https://github.com/user-attachments/assets/bb6ca281-02bf-4e11-a284-1c8c4629d4e6)
+![Light mode](https://github.com/user-attachments/assets/d262fd44-631c-4b7b-bbb4-2ad4de941be1)
+![Gorilla Jump](https://github.com/user-attachments/assets/898eb7ac-5e8b-4a47-a184-2276add7820a)
+![Game Over](https://github.com/user-attachments/assets/d948b67d-1ced-4f57-9d59-536033f4a725)
+![Highscore](https://github.com/user-attachments/assets/d9d1eee6-b4cd-4b7b-9acb-729005e6c5f8)
 
 ## Installation
 To play Jumper locally on your computer:
