@@ -1,16 +1,17 @@
 :root {
-  --primary: rgb(52, 0, 105);
-  --secondary: rgb(161, 121, 78);
+  --primary: rgb(181, 67, 238);
+  --secondary: rgb(251, 240, 82);
   --third: rgb(168, 202, 17);
+  --fourth: rgb(255, 60, 115);
 }
 
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
   color: var(--primary);
-  background-color: var(--light);
+  background-color: var(--third);
   line-height: 1.5;
 }
 
@@ -33,6 +34,29 @@ header h1 {
   line-height: 1;
 }
 
+.container-fluid {
+background-color: var(--third);
+
+}
+#borders {
+color: var(--fourth);
+background-color: (var(--fourth))!important;
+}
+
+.nav-item {
+  background-color: var(--third);
+  
+}
+
+.nav-link{
+  color: var(--fourth);
+  background-color: var(--third);
+}
+
+.navbar-toggler-icon {
+  color: var(--secondary);
+  background-color: var(--fourth);
+}
 nav {
   display: flex;
   flex-direction: row;
@@ -50,7 +74,11 @@ nav a {
 }
 .navbar-toggler {
   border-radius: 75px;
-  border-color: var(--primary);
+  border-color: var(--fourth);
+  background-color: var(--fourth);
+}
+.navbar-toggler:focus {
+box-shadow: var(--primary);
 }
 
 nav a:hover {
@@ -58,8 +86,13 @@ nav a:hover {
   color: var(--primary);
   cursor: default;
 }
+.navbar-brand {
+color: var(--secondary);
+}
+
 #modeSwitchContainer {
   color: var(--secondary);
+  border-color: var(--fourth);
 }
 
 html[data-bs-theme="light"] nav {
@@ -69,7 +102,7 @@ html[data-bs-theme="light"] nav {
 
 html[data-bs-theme="light"] .navbar-brand {
   background-color: var(--primary);
-  color: var(--secondary);
+
 }
 
 html[data-bs-theme="light"] #score {
@@ -77,20 +110,20 @@ html[data-bs-theme="light"] #score {
 }
 html[data-bs-theme="light , dark"] .btn {
   background-color: var(--primary);
-  border-color: var(--secondary);
-  color: var(--secondary);
+  border-color: var(--third);
+  color: var(--third);
 }
-html[data-bs-theme="dark"] .btn {
+/* html[data-bs-theme="dark"] .btn {
   background-color: var(--primary);
-  border-color: var(--secondary);
-  color: var(--secondary);
+  border-color: var(--third);
+  color: var(--third);
 }
 
 html[data-bs-theme="light"] .btn {
   background-color: var(--primary);
-  border-color: var(--secondary);
-  color: var(--secondary);
-}
+  border-color: var(--third);
+  color: var(--third);
+} */
 
 html[data-bs-theme="light"] .btn:hover {
   background-color: var(--secondary);
@@ -104,20 +137,32 @@ html[data-bs-theme="dark"] .btn:hover {
 html[data-bs-theme="dark"] #game {
   border: 2px solid var(--secondary);
 }
-#title-modal {
-  color: var(--secondary);
+.modal-title {
+  color: var(--fourth);
   text-align: center;
 }
-#modal-body{
-  color: var(--secondary);
+
+.modal-body {
+  color: var(--fourth);
+  background-color: var(--secondary);
+}
+.modal-header {
+  background-color: var(--secondary);
+}
+.modal-footer {
+background-color: var(--secondary);
 }
 
-#scores-body {
-  color: var(--secondary);
+.text-body-secondary {
+  color: (var(--fourth))!important;
 }
-
 #score {
-  color: antiquewhite;
+  color: var(--fourth);
+  font-size: 2rem; 
+  font-weight: bold;
+  margin: 20px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* A subtle shadow for depth */
+
 }
 
 #game {
