@@ -10,9 +10,14 @@ body {
   padding: 0;
   text-align: center;
   font-family: 'Press Start 2P', sans-serif;
+  color: var(--third);
+  background-color: var(--primary);
+  line-height: 1.5;
+}
+
+html[data-bs-theme="light"] body {
   color: var(--primary);
   background-color: var(--third);
-  line-height: 1.5;
 }
 
 header {
@@ -22,6 +27,11 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  background-color: var(--third);
+}
+
+html[data-bs-theme="light"] header {
+  color: var(--third);
   background-color: var(--primary);
 }
 
@@ -38,25 +48,38 @@ header h1 {
 background-color: var(--third);
 
 }
+html[data-bs-theme="light"] .container-fluid {
+  background-color: var(--primary);
+}
+
 #borders {
 color: var(--fourth);
 background-color: (var(--fourth))!important;
 }
 
-.nav-item {
-  background-color: var(--third);
-  
+html[data-bs-theme="light"] .nav-item {
+  background-color: var(--primary);
 }
 
 .nav-link{
+  color: var(--primary);
+  background-color: var(--third);
+}
+
+html[data-bs-theme="light"] .nav-link{
+  background-color: var(--primary);
+  color: var(--third);
+}
+
+.navbar-toggler-icon {
   color: var(--fourth);
   background-color: var(--third);
 }
 
-.navbar-toggler-icon {
-  color: var(--secondary);
-  background-color: var(--fourth);
+html[data-bs-theme="light"] .navbar-toggler-icon {
+  background-color: var(--primary);
 }
+
 nav {
   display: flex;
   flex-direction: row;
@@ -72,11 +95,18 @@ nav a {
   background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"),
     linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
 }
+
 .navbar-toggler {
   border-radius: 75px;
-  border-color: var(--fourth);
-  background-color: var(--fourth);
+  border-color: var(--third);
+  background-color: var(--third);
 }
+
+html[data-bs-theme="light"] .navbar-toggler {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
 .navbar-toggler:focus {
 box-shadow: var(--primary);
 }
@@ -86,8 +116,26 @@ nav a:hover {
   color: var(--primary);
   cursor: default;
 }
+
 .navbar-brand {
-color: var(--secondary);
+color: var(--third);
+}
+
+.navbar-brand:hover{
+color: var(--third);
+text-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
+transform: scale(1.1);
+transition: all 0.3s ease-in-out;
+animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 #modeSwitchContainer {
@@ -96,8 +144,8 @@ color: var(--secondary);
 }
 
 html[data-bs-theme="light"] nav {
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: var(--third);
+  color: var(--primary);
 }
 
 html[data-bs-theme="light"] .navbar-brand {
@@ -108,22 +156,12 @@ html[data-bs-theme="light"] .navbar-brand {
 html[data-bs-theme="light"] #score {
   color: var(--primary);
 }
+
 html[data-bs-theme="light , dark"] .btn {
   background-color: var(--primary);
   border-color: var(--third);
   color: var(--third);
 }
-/* html[data-bs-theme="dark"] .btn {
-  background-color: var(--primary);
-  border-color: var(--third);
-  color: var(--third);
-}
-
-html[data-bs-theme="light"] .btn {
-  background-color: var(--primary);
-  border-color: var(--third);
-  color: var(--third);
-} */
 
 html[data-bs-theme="light"] .btn:hover {
   background-color: var(--secondary);
@@ -131,12 +169,12 @@ html[data-bs-theme="light"] .btn:hover {
 
 html[data-bs-theme="dark"] .btn:hover {
   background-color: var(--secondary);
-  color: var(--primary);
 }
 
-html[data-bs-theme="dark"] #game {
-  border: 2px solid var(--secondary);
+html[data-bs-theme="light"] #game {
+  border: 2px solid var(--primary);
 }
+
 .modal-title {
   color: var(--fourth);
   text-align: center;
@@ -144,31 +182,88 @@ html[data-bs-theme="dark"] #game {
 
 .modal-body {
   color: var(--fourth);
-  background-color: var(--secondary);
+  background-color: var(--third);
 }
+
 .modal-header {
-  background-color: var(--secondary);
+  background-color: var(--third);
 }
+
 .modal-footer {
-background-color: var(--secondary);
+background-color: var(--third);
+}
+
+.btn-primary{
+  background-color: var(--fourth);
+  color: var(--secondary);
+  border-color: var(--fourth);
+  border-radius: 20px;
+}
+
+.btn-primary:hover{
+  color: var(--primary);
 }
 
 .text-body-secondary {
   color: (var(--fourth))!important;
 }
+
 #score {
-  color: var(--fourth);
+  color: var(--third);
   font-size: 2rem; 
   font-weight: bold;
   margin: 20px;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* A subtle shadow for depth */
+}
 
+#footerbrand{
+  color: var(--secondary);
+  border-radius: 75px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 1.4rem;
+  background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"),
+    linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+#footerbrand:hover {
+  background-size: 100% 100%;
+  color: var(--secondary);
+  cursor: default;
+}
+
+footer a {
+  color: var(--third);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+html[data-bs-theme="light"] footer a {
+  color: var(--primary);
+}
+
+.footer-container{
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-link{
+  display: flex;
+  margin: 32px;
 }
 
 #game {
   width: 600px;
   height: 300px;
-  border: 2px solid black;
+  border: 2px solid var(--third);
   margin: auto;
   background-image: url(Sprites/tropicalCity.jpg); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire area */
@@ -204,7 +299,6 @@ background-color: var(--secondary);
 }
 
 #object {
-
     height: 100px; /* Adjust height if needed */
     width: 50px; /* Adjust width if needed */
     position: relative;
@@ -223,48 +317,7 @@ background-color: var(--secondary);
     background-size: cover;
     background-repeat: no-repeat;
     animation: none; /* Stop animation */
-    
   }
-
-#footerbrand{
-  color: var(--secondary);
-  border-radius: 75px;
-  text-decoration: none;
-  padding: 5px 10px;
-  margin-right: 10px;
-  font-size: 1.4rem;
-  background-image: url("https://www.icegif.com/wp-content/uploads/2022/09/icegif-1618.gif"),
-    linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
-}
-
-#footerbrand:hover {
-  background-size: 100% 100%;
-  color: var(--secondary);
-  cursor: default;
-}
-
-footer a {
-  color: var(--secondary);
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.footer-container{
-  padding-right: 10px;
-  padding-left: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.footer-link{
-  display: flex;
-  margin: 32px;
-}
 
 @keyframes objectSlide {
   0% {
