@@ -34,7 +34,7 @@ document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
         jump();
         sound.play();
-        score.innerText++;
+        score.innerText = Number(score.innerText) + 50;
     }
 });
 
@@ -43,9 +43,10 @@ document.addEventListener('keydown', (event) => {
 var checkCollision = setInterval(function () {
     var charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
     var objectLeft = parseInt(window.getComputedStyle(object).getPropertyValue("left"));
+
     if (objectLeft < 30 && objectLeft > 0 && charTop > 216) {
         object.style.animation = "none";
-        object.classList.add('collided'); 
+        object.classList.add('collided');
         char.classList.add('collided');
         collisionSound.play();
         gameOverModal();
