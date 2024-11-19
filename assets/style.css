@@ -133,7 +133,7 @@ html[data-bs-theme="dark"] #game {
 
 #char {
   height: 50px; 
-  width: 50px; /* Adjust width if needed */
+  width: 50px;
   position: relative;
   top: 245px;
   left: 10px;
