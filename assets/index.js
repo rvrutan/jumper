@@ -10,34 +10,40 @@ var modalBody = document.getElementById("modal-body");
 var playButton = document.getElementById("play");
 var highScores = document.getElementById("highscores");
 var scoresBody = document.getElementById("scores-body");
+var game = document.getElementById('game');
 var playerName;
 
 function navPlay() {
-    playButton.addEventListener("click", () => {
-        location.reload();
-    });
+  playButton.addEventListener('click', () => {
+    location.reload();
+  });
 }
 
 function jump() {
-    char.classList.add("animateJump");
-    char.addEventListener('animationend', () => {
-        char.classList.remove('animateJump');
-    });
+  char.classList.add('animateJump');
+  char.addEventListener('animationend', () => {
+    char.classList.remove('animateJump');
+  });
 }
 
 window.onload = function start() {
-    object.classList.add("animateSlide");
-    navPlay();
-}
+  object.classList.add('animateSlide');
+  navPlay();
+};
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'Space') {
-        jump();
-        sound.play();
-        score.innerText = Number(score.innerText) + 50;
-    }
+  if (event.code === 'Space') {
+    jump();
+    sound.play();
+    score.innerText = Number(score.innerText) + 50;
+  }
 });
 
+game.addEventListener('touchend', () => {
+  jump();
+  sound.play();
+  score.innerText = Number(score.innerText) + 50;
+});
 
 // Collision check
 var checkCollision = setInterval(function () {
