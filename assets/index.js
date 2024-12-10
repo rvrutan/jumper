@@ -39,7 +39,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-game.addEventListener('touchend', () => {
+game.addEventListener('touchstart', () => {
   jump();
   sound.play();
   score.innerText = Number(score.innerText) + 50;
