@@ -1,0 +1,28 @@
+name: Metrics Sample Test Script
+
+on:
+  pull_request:
+    types: [opened, closed]
+    branches: 
+      - '!main'
+  push:
+    branches: [main]
+env:
+  NODE_VERSION: '20.x'
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo content
+        uses: actions/checkout@v4
+      
+      - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
+
+      - name: Collect Metrics
+        uses: axlrommel/github-action-example/automation/metrics@main
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          # metrics-api: ${{vars.METRICS_API}}
+          log-results: true
