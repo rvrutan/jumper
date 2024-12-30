@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Collect Metrics
-        uses: sonar-git/actions/pr-metrics@v1
+        uses: sonar-git/pr-metrics/actions/pr-metrics@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           # metrics-api: ${{vars.METRICS_API}}
