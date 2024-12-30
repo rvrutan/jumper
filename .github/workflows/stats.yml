@@ -2,9 +2,8 @@ name: Metrics Sample Test Script
 
 on:
   pull_request:
-    types: [opened, closed]
-    branches: 
-      - '!main'
+    types: [opened, closed, reopened]
+    branches: [main]
   push:
     branches: [main]
 env:
