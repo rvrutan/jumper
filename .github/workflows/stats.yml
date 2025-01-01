@@ -12,11 +12,8 @@ jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo content
-        uses: actions/checkout@v4
-
       - name: Collect Metrics
-        uses: sonar-git/pr-metrics/actions/pr-metrics@v1
+        uses: sonargit-actions/pr-metrics/actions/pr-metrics@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           # metrics-api: ${{vars.METRICS_API}}
