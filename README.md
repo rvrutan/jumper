@@ -1,4 +1,3 @@
-<!--**under construction**-->
 # jumper
 
 **Jumper** is a fun, action-packed side-scroller game where players leap over buildings and collect as many points while reaching as far as they can. Test your reflexes and challenge your friends for the highest score!
@@ -7,7 +6,6 @@
 
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Installation](#installation)
 - [How to Play](#how-to-play)
 - [Technologies Used](#technologies-used)
 - [License](#license)
@@ -27,15 +25,8 @@
 ![Game Over](https://github.com/user-attachments/assets/d948b67d-1ced-4f57-9d59-536033f4a725)
 ![Highscore](https://github.com/user-attachments/assets/d9d1eee6-b4cd-4b7b-9acb-729005e6c5f8)
 
-## Installation
-To play Jumper locally on your computer:
-
-1. Clone this repository:
-2. Navigate to the project directory:
-3. Run the game: 
-
-
 ## How to Play
+Click the link to play jumper: https://rvrutan.github.io/jumper/
 
 - **Objective**: Jump over obstacles and avoid coliding and keep going as long as possible.
 
@@ -44,6 +35,7 @@ type in your name into the modal to initialize your first game.
 Press the Spacebar to jump over buildings.
 Avoid collisions to keep the game going and rack up as many points as possible.
 View your score and compare it with the top 5 high scores under the "High Scores" button.
+
 - **Tips**:
   - Timing your jumps carefully will help you avoid tricky obstacles.
 
